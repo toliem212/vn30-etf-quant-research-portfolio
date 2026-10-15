@@ -45,7 +45,8 @@ Chưa. A3 có Alpha ước lượng **+3,4028%/năm**, với **p = 0,2393**; S1 
 
 Trọng tâm của sản phẩm là nối các phần việc thường bị tách rời: **tín hiệu → tỷ trọng mục tiêu → nhu cầu giao dịch → giới hạn thực hiện → trạng thái danh mục → đánh giá rủi ro**. Nhờ có sổ mô phỏng và phương pháp đi kèm, một kết quả có thể được kiểm tra từ nguồn dữ liệu đến sổ giao dịch.
 
-Các giao dịch tháng 10/2026 là **mô phỏng lại các phiên giao dịch đã diễn ra**. Giao dịch thử trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết diễn biến thị trường. Nghiên cứu chưa có bằng chứng ngoài mẫu độc lập đủ mạnh, chưa xác minh khớp lệnh thực tế và chưa đủ cơ sở triển khai vốn thật.
+Các giao dịch tháng 10/2026 là **mô phỏng lại các phiên giao dịch đã diễn ra**. Giao dịch thử trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết diễn biến thị trường. Nghiên cứu chưa có kết quả kiểm định trên dữ liệu mới sau khi cố định chiến lược; khả năng khớp lệnh thực tế chưa được xác minh và việc sử dụng vốn thật chưa được phê duyệt.
 
 *Nguồn: Báo cáo nghiên cứu sáu chiến lược tháng 10/2026 (mục V, VII, VIII và Phụ lục A), sổ lệnh và sổ tài khoản B4 trong bộ dữ liệu nghiên cứu lưu riêng.*
+
 

@@ -106,7 +106,7 @@ Một khác biệt phương pháp cũng được giữ rõ: theo hồ sơ quỹ 
 
 Mô hình giao dịch ETF–tiền mặt sử dụng **phí 0,15% mỗi chiều**, **trượt giá 0,05% mỗi chiều**, **thuế bán 0,10%**, **lô 100 CCQ**, **giới hạn 5% ADV20** và **lãi tiền mặt 0%**. Lệnh giả định tuân theo thời điểm xác nhận tín hiệu và quy tắc thanh toán của từng giai đoạn. Mô hình chưa phản ánh đầy đủ độ sâu sổ lệnh, cạnh tranh khớp lệnh và sai khác giữa giá mô phỏng với giá thực hiện.
 
-Chín phiên từ **01–13/10/2026** được **mô phỏng lại các phiên giao dịch đã diễn ra** để kiểm tra tài khoản và giao dịch. Việc đánh giá trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết kết quả thị trường. S1 vẫn cần xác minh dữ liệu tại ngày tín hiệu; năm chiến lược chính chưa có đủ kết quả thử độc lập để chấp thuận giao dịch vốn thật.
+Chín phiên giao dịch từ **01–13/10/2026** được **mô phỏng lại** để kiểm tra tài khoản và giao dịch. Việc đánh giá trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết kết quả thị trường. S1 vẫn cần xác minh dữ liệu tại ngày tín hiệu; năm chiến lược chính chưa có đủ kết quả thử độc lập để chấp thuận giao dịch vốn thật.
 
 Ứng dụng hiện có thể truy cập trực tuyến, song khả năng vận hành máy chủ không tự chứng minh hiệu quả chiến lược hay mức độ sẵn sàng phục vụ nhà đầu tư. Giá trị sử dụng thường xuyên, mức tiết kiệm thời gian so với cách làm khác và tiềm năng thương mại hóa vẫn cần được đánh giá với bộ phận nghiên cứu và người quản lý danh mục.
 
@@ -119,5 +119,6 @@ python -m unittest discover -s examples -p 'test_*.py'
 ```
 
 Mã nguồn hệ thống, các chương trình nghiên cứu, dữ liệu gốc và sổ mô phỏng được lưu riêng để phục vụ kiểm chứng và phát triển lâu dài. Kho hồ sơ này chỉ gồm những nội dung đã chọn để giới thiệu công trình. **Chưa áp dụng giấy phép mã nguồn mở.**
+
 
 
