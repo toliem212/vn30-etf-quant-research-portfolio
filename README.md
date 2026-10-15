@@ -66,6 +66,8 @@ Trong mẫu lịch sử, **B1 có NAV và XIRR cao nhất**, đồng thời ch�
 
 Các ước lượng **Alpha chưa đạt ý nghĩa thống kê ở mức 5%** theo mô hình CAPM với sai số chuẩn HAC. Đây là kết quả nghiên cứu về sự đánh đổi giữa hiệu quả và rủi ro, chưa phải bằng chứng về khả năng tạo lợi nhuận vượt trội bền vững.
 
+**Phương án tiếp tục kiểm chứng:** A3 được chọn làm ứng viên theo dõi trên dữ liệu mới, với B4 là đối chứng trực tiếp để đánh giá đóng góp của Momentum120 và B1 là mốc tích lũy dài hạn. S1 tiếp tục xác minh dữ liệu Breadth60. Đây là quyết định nghiên cứu có điều kiện; hiện chưa có bằng chứng tiến cứu đủ mạnh hoặc phê duyệt sử dụng vốn thật.
+
 ## Vì sao chọn E1VFVN30?
 
 Để so sánh các chính sách phân bổ trên cùng một cơ sở, nghiên cứu sử dụng **E1VFVN30 làm ETF giao dịch mô phỏng**. Quỹ có lịch sử giao dịch dài và chuỗi giá tương đối liên tục, thuận tiện cho việc theo dõi danh mục trong giai đoạn nghiên cứu. Thanh khoản cũng là một tiêu chí quan trọng vì một chiến lược chỉ có ý nghĩa thực tế khi lượng giao dịch giả định có cơ sở thực hiện.
