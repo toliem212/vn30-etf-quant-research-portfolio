@@ -19,7 +19,9 @@ Trường hợp B4 tại phiên **01/10/2026**:
 | Giới hạn giao dịch | 5% ADV20, làm tròn lô 100 CCQ |
 | Tỷ trọng ETF thực tế ngày 13/10/2026 | 43,62% |
 
-Dữ liệu nguồn lưu trong nhật ký mô phỏng lịch sử thuộc dự án Private. Giới hạn thanh khoản khiến quy mô lệnh thực hiện khác nhu cầu phân bổ. Quy trình nghiên cứu truy vết được *tín hiệu → mục tiêu → nhu cầu lệnh → giới hạn → trạng thái tài khoản*, thay vì chỉ đưa ra điểm mua/bán.
+Dữ liệu nguồn lưu trong nhật ký mô phỏng lịch sử thuộc dự án Private. Giới hạn thanh khoản khiến quy mô lệnh thực hiện khác nhu cầu phân bổ. Tỷ trọng 43,62% là tại ngày 13/10, không phải ngay sau lệnh ngày 01/10; biến động giá, dòng tiền và các phiên sau cũng tác động. Quy trình nghiên cứu truy vết được *tín hiệu → mục tiêu → nhu cầu lệnh → giới hạn → trạng thái tài khoản*, thay vì chỉ đưa ra điểm mua/bán.
+
+Để tự kiểm tra, mở [Dashboard trực tuyến](https://vn30-etf-quant-platform.onrender.com/) → **Tổng quan** → **Kiểm tra lệnh và tài khoản B4**; so số liệu tại **Theo dõi giao dịch mô phỏng**.
 
 Đây là **sổ mô phỏng lại diễn biến đã xảy ra**, không phải quyết định được ghi nhận trước phiên 01/10/2026. Bộ mã Public không cung cấp chức năng đặt lệnh, tính tín hiệu hoặc khôi phục sổ tài khoản này.
 

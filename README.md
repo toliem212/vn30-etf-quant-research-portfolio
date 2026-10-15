@@ -12,6 +12,20 @@ Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi th
 
 Ứng dụng Streamlit gồm **7 mục**, hỗ trợ so sánh chính sách đầu tư, truy nguyên tín hiệu, mô phỏng một quyết định phân bổ, kiểm tra khả năng thực hiện lệnh, phân tích rủi ro và theo dõi tài khoản giả định. Giai đoạn mô phỏng chính: **01/10/2021–30/09/2026**, 1.245 phiên; tổng vốn góp **2,18 tỷ đồng**.
 
+## Ai sử dụng và giải quyết việc gì?
+
+Sản phẩm hướng tới **chuyên viên nghiên cứu định lượng, phân tích đầu tư và theo dõi rủi ro danh mục**. Thay vì dừng ở tín hiệu SMA200 hay một bảng lợi suất, người dùng có thể kiểm tra ba công việc liên tiếp:
+
+| Công việc | Thao tác trong Dashboard | Điều nhận được |
+|:--|:--|:--|
+| Chọn chính sách phù hợp mức chịu lỗ | Lọc chiến lược bằng MDD và so XIRR/NAV trên **Tổng quan** | Các phương án lịch sử còn phù hợp ngưỡng tự chọn, kèm đánh đổi lợi suất–rủi ro |
+| Biến tín hiệu thành danh mục | Xem kỳ tín hiệu; nhập tiền, số CCQ và vốn góp tại **Chiến lược / Danh mục** | Tỷ trọng mục tiêu, lượng mua/bán giả định, chi phí và phần chưa thực hiện |
+| Kiểm tra vì sao không đạt mục tiêu | Mở **Theo dõi giao dịch mô phỏng**, chọn B4 và phiên 01/10/2026 | Sổ lệnh, trần 5% ADV20, CCQ khớp một phần và tiền chờ thanh toán |
+
+**Ví dụ trực tiếp:** B4 dự kiến bán 37.700 CCQ, nhưng chỉ thực hiện giả định 25.600 CCQ và còn 12.100 CCQ không thực hiện. Đến 13/10/2026, danh mục còn 43,62% ETF so với mục tiêu đặt ngày 01/10 là 30%. Hai thời điểm khác nhau; khoảng cách còn chịu tác động của thị trường và những phiên tiếp theo. [Xem ứng dụng](https://vn30-etf-quant-platform.onrender.com/) → **Tổng quan** → **Kiểm tra lệnh và tài khoản B4**.
+
+**Giá trị có thể kiểm tra:** gom tín hiệu, quy tắc phân bổ, dữ liệu lệnh và trạng thái tài khoản vào một chuỗi có thể truy nguyên, thay vì chỉ đọc các bảng kết quả rời. So với bảng tính hoặc công cụ Backtest riêng lẻ, đây là *phạm vi công việc được tích hợp*, không phải bằng chứng đã tiết kiệm thời gian, giảm chi phí hay dự báo tốt hơn. Nhu cầu sử dụng định kỳ và khả năng thương mại hóa chưa được khảo sát.
+
 ## Cơ sở lựa chọn ETF E1VFVN30
 
 Mẫu nghiên cứu chỉ sử dụng **một ETF làm tài sản giao dịch** để so sánh các chính sách phân bổ trên cùng cơ sở. E1VFVN30 được chọn dựa trên thời gian hoạt động dài, tính liên tục của chuỗi giá và thanh khoản khảo sát, chứ không mặc định là ETF có lợi suất hoặc tổng chi phí tối ưu.
