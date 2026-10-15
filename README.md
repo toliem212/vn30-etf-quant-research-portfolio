@@ -14,16 +14,16 @@ Dự án này bắt đầu từ khoảng cách giữa **một chiến lược c�
 
 Giả sử nhà đầu tư có **1 tỷ đồng ban đầu**, góp thêm **20 triệu đồng mỗi tháng trong 59 tháng**. Có nên đầu tư ngay toàn bộ, chia vốn thành nhiều đợt, duy trì một tỷ trọng ETF cố định hay điều chỉnh theo thị trường?
 
-Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026**, gồm **1.245 phiên giao dịch** và **2,18 tỷ đồng tổng vốn góp**. Năm phương án B1–B4/A3 thuộc nghiên cứu chính; S1 là nhánh khảo sát bổ sung với giới hạn dữ liệu riêng.
+Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026**, gồm **1.245 phiên giao dịch** và **2,18 tỷ đồng tổng vốn góp**. Năm chiến lược 01–05 thuộc bộ kết quả chính đã khóa; chiến lược 06 là nhánh nghiên cứu thăm dò với giới hạn dữ liệu riêng. Mã trên báo cáo và Dashboard lần lượt tương ứng với mã nguồn: **01 = B1; 02 = B2; 03 = B3; 04 = B4; 05 = A3; 06 = S1**. Các mã nguồn được giữ để truy nguyên số liệu.
 
 | Phương án | Cách phân bổ | Câu hỏi nghiên cứu |
 |:--|:--|:--|
-| **B1** | Tích lũy ETF định kỳ | Đầu tư sớm và góp đều mang lại kết quả gì? |
-| **B2** | Giải ngân vốn ban đầu thành sáu đợt | Chia thời điểm mua giúp thay đổi rủi ro ra sao? |
-| **B3** | Duy trì ETF/tiền mặt ở mức 60/40 | Tỷ trọng cố định tạo ra sự đánh đổi nào? |
-| **B4** | VN30/SMA200; tỷ trọng ETF mục tiêu 30% hoặc 90% | Phân bổ theo xu hướng có giảm sụt giảm không? |
-| **A3** | SMA200 và Momentum120; mục tiêu 30/60/90% | Bổ sung động lượng làm thay đổi kết quả thế nào? |
-| **S1** | SMA200 và Breadth60; mục tiêu 30/60/90% | Độ rộng thị trường có bổ sung thông tin hữu ích không? |
+| **01 · B1** | Tích lũy ETF định kỳ | Đầu tư sớm và góp đều mang lại kết quả gì? |
+| **02 · B2** | Giải ngân vốn ban đầu thành sáu đợt | Chia thời điểm mua giúp thay đổi rủi ro ra sao? |
+| **03 · B3** | Duy trì ETF/tiền mặt ở mức 60/40 | Tỷ trọng cố định tạo ra sự đánh đổi nào? |
+| **04 · B4** | VN30/SMA200; tỷ trọng ETF mục tiêu 30% hoặc 90% | Phân bổ theo xu hướng có giảm sụt giảm không? |
+| **05 · A3** | SMA200 và Momentum120; mục tiêu 30/60/90% | Bổ sung động lượng làm thay đổi kết quả thế nào? |
+| **06 · S1** | SMA200 và Breadth60; mục tiêu 30/60/90% | Độ rộng thị trường có bổ sung thông tin hữu ích không? |
 
 Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần chưa được xác minh đầy đủ về khả năng quan sát đúng tại thời điểm phát sinh tín hiệu. Vì vậy, kết quả S1 được trình bày riêng như **nghiên cứu thăm dò**.
 
@@ -53,12 +53,12 @@ Một tín hiệu đúng quy tắc, vì thế, chưa đủ bảo đảm danh m�
 
 | Phương án | NAV cuối kỳ (tỷ đồng) | TWR (%) | XIRR (%/năm) | MDD (%) |
 |:--|--:|--:|--:|--:|
-| B1 | 3,1266 | 40,06 | 10,06 | −42,27 |
-| B2 | 3,0709 | 34,51 | 9,55 | −42,00 |
-| B3 | 2,7588 | 26,16 | 6,53 | −26,81 |
-| B4 | 2,9013 | 35,74 | 7,94 | −20,39 |
-| A3 | 2,9856 | 41,40 | 8,75 | −18,91 |
-| S1* | 2,8603 | 34,60 | 7,54 | −17,62 |
+| 01 · B1 | 3,1266 | 40,06 | 10,06 | −42,27 |
+| 02 · B2 | 3,0709 | 34,51 | 9,55 | −42,00 |
+| 03 · B3 | 2,7588 | 26,16 | 6,53 | −26,81 |
+| 04 · B4 | 2,9013 | 35,74 | 7,94 | −20,39 |
+| 05 · A3 | 2,9856 | 41,40 | 8,75 | −18,91 |
+| 06 · S1* | 2,8603 | 34,60 | 7,54 | −17,62 |
 
 *B1–B4/A3: kết quả R01 đã đối soát. S1: sổ nghiên cứu bổ sung, chưa hoàn tất kiểm chứng dữ liệu đúng thời điểm. Số liệu theo Phụ lục A của báo cáo sáu chiến lược ngày 15/10/2026. NAV bao gồm vốn đã góp; TWR tách ảnh hưởng của dòng vốn bổ sung, XIRR phản ánh thời điểm góp vốn, còn MDD đo mức sụt giảm từ đỉnh xuống đáy.*
 
@@ -66,7 +66,7 @@ Trong mẫu lịch sử, **B1 có NAV và XIRR cao nhất**, đồng thời ch�
 
 Các ước lượng **Alpha chưa đạt ý nghĩa thống kê ở mức 5%** theo mô hình CAPM với sai số chuẩn HAC. Đây là kết quả nghiên cứu về sự đánh đổi giữa hiệu quả và rủi ro, chưa phải bằng chứng về khả năng tạo lợi nhuận vượt trội bền vững.
 
-**Phương án tiếp tục kiểm chứng:** A3 được chọn làm ứng viên theo dõi trên dữ liệu mới, với B4 là đối chứng trực tiếp để đánh giá đóng góp của Momentum120 và B1 là mốc tích lũy dài hạn. S1 tiếp tục xác minh dữ liệu Breadth60. Đây là quyết định nghiên cứu có điều kiện; hiện chưa có bằng chứng tiến cứu đủ mạnh hoặc phê duyệt sử dụng vốn thật.
+**Phương án tiếp tục kiểm chứng:** 05 (A3) được chọn làm ứng viên theo dõi trên dữ liệu mới, với 04 (B4) là đối chứng trực tiếp để đánh giá đóng góp của Momentum120 và 01 (B1) là mốc tích lũy dài hạn. S1 tiếp tục xác minh dữ liệu Breadth60. Đây là quyết định nghiên cứu có điều kiện; hiện chưa có bằng chứng tiến cứu đủ mạnh hoặc phê duyệt sử dụng vốn thật.
 
 ## Vì sao chọn E1VFVN30?
 
@@ -119,3 +119,4 @@ python -m unittest discover -s examples -p 'test_*.py'
 ```
 
 Mã nguồn hệ thống, các chương trình nghiên cứu, dữ liệu gốc và sổ mô phỏng được lưu riêng để phục vụ kiểm chứng và phát triển lâu dài. Kho hồ sơ này chỉ gồm những nội dung đã chọn để giới thiệu công trình. **Chưa áp dụng giấy phép mã nguồn mở.**
+
