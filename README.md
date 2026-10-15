@@ -1,108 +1,119 @@
-# VN30 ETF | Nghiên cứu và mô phỏng đầu tư định lượng
+# VN30 ETF | Từ tín hiệu thị trường đến quyết định đầu tư
 
-**Công trình nghiên cứu cá nhân** phục vụ giới thiệu năng lực nghiên cứu định lượng và phát triển sản phẩm đầu tư; không phải sản phẩm được TVS nghiệm thu hay khuyến nghị đầu tư.
+**Nghiên cứu chiến lược và mô phỏng danh mục ETF VN30**
 
-**[Mở ứng dụng trực tuyến — VN30 ETF Quant Platform](https://vn30-etf-quant-platform.onrender.com/)** · [Tình huống sử dụng](TINH_HUONG_SU_DUNG.md) · [Ví dụ mã Python](examples/accounting_example.py)
+Một tín hiệu có thể cho biết khi nào nên giảm tỷ trọng cổ phiếu. Nhưng sau tín hiệu ấy, danh mục thực sự bán được bao nhiêu, còn nắm giữ bao nhiêu và đang chịu rủi ro gì?
 
-Ứng dụng dùng cho nghiên cứu và mô phỏng, không kết nối đặt lệnh tiền thật. Dịch vụ miễn phí trên Render có thể mất thời gian khởi động sau thời gian không truy cập.
+Dự án này bắt đầu từ khoảng cách giữa **một chiến lược có kết quả Backtest** và **một quyết định đầu tư có thể thực hiện, theo dõi và kiểm chứng**. Trên cùng dữ liệu lịch sử, tôi nghiên cứu các chính sách giải ngân và phân bổ ETF VN30, sau đó nối tín hiệu với dòng tiền, số chứng chỉ quỹ, giới hạn thanh khoản, chi phí, giá trị tài sản và rủi ro danh mục.
 
-## Bài toán và sản phẩm
+**[Trải nghiệm VN30 ETF Quant Platform](https://vn30-etf-quant-platform.onrender.com/)** · [Một tình huống giao dịch đáng chú ý](TINH_HUONG_SU_DUNG.md) · [Ví dụ Python](examples/accounting_example.py)
 
-Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi tháng trong 59 tháng**, nhà đầu tư nên giải ngân, duy trì ETF hay điều chỉnh tỷ trọng thế nào? Một công cụ hữu ích không chỉ đưa tín hiệu mua/bán mà còn phải theo dõi **tiền mặt, số chứng chỉ quỹ, thanh khoản, chi phí, NAV và mức sụt giảm** sau mỗi quyết định.
+Đây là công trình nghiên cứu cá nhân, không phải sản phẩm đã được TVS nghiệm thu hoặc khuyến nghị đầu tư. Ứng dụng phục vụ nghiên cứu và mô phỏng, không kết nối đặt lệnh bằng tiền thật. Máy chủ thử nghiệm có thể cần thêm thời gian khởi động sau một thời gian không hoạt động.
 
-Ứng dụng Streamlit gồm **7 mục**, hỗ trợ so sánh chính sách đầu tư, truy nguyên tín hiệu, mô phỏng một quyết định phân bổ, kiểm tra khả năng thực hiện lệnh, phân tích rủi ro và theo dõi tài khoản giả định. Giai đoạn mô phỏng chính: **01/10/2021–30/09/2026**, 1.245 phiên; tổng vốn góp **2,18 tỷ đồng**.
+## Bài toán nghiên cứu
 
-## Ai sử dụng và giải quyết việc gì?
+Giả sử nhà đầu tư có **1 tỷ đồng ban đầu**, góp thêm **20 triệu đồng mỗi tháng trong 59 tháng**. Có nên đầu tư ngay toàn bộ, chia vốn thành nhiều đợt, duy trì một tỷ trọng ETF cố định hay điều chỉnh theo thị trường?
 
-Sản phẩm hướng tới **chuyên viên nghiên cứu định lượng, phân tích đầu tư và theo dõi rủi ro danh mục**. Thay vì dừng ở tín hiệu SMA200 hay một bảng lợi suất, người dùng có thể kiểm tra ba công việc liên tiếp:
+Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026**, gồm **1.245 phiên giao dịch** và **2,18 tỷ đồng tổng vốn góp**. Năm phương án B1–B4/A3 thuộc nghiên cứu chính; S1 là nhánh khảo sát bổ sung với giới hạn dữ liệu riêng.
 
-| Công việc | Thao tác trong Dashboard | Điều nhận được |
+| Phương án | Cách phân bổ | Câu hỏi nghiên cứu |
 |:--|:--|:--|
-| Chọn chính sách phù hợp mức chịu lỗ | Lọc chiến lược bằng MDD và so XIRR/NAV trên **Tổng quan** | Các phương án lịch sử còn phù hợp ngưỡng tự chọn, kèm đánh đổi lợi suất–rủi ro |
-| Biến tín hiệu thành danh mục | Xem kỳ tín hiệu; nhập tiền, số CCQ và vốn góp tại **Chiến lược / Danh mục** | Tỷ trọng mục tiêu, lượng mua/bán giả định, chi phí và phần chưa thực hiện |
-| Kiểm tra vì sao không đạt mục tiêu | Mở **Theo dõi giao dịch mô phỏng**, chọn B4 và phiên 01/10/2026 | Sổ lệnh, trần 5% ADV20, CCQ khớp một phần và tiền chờ thanh toán |
+| **B1** | Tích lũy ETF định kỳ | Đầu tư sớm và góp đều mang lại kết quả gì? |
+| **B2** | Giải ngân vốn ban đầu thành sáu đợt | Chia thời điểm mua giúp thay đổi rủi ro ra sao? |
+| **B3** | Duy trì ETF/tiền mặt ở mức 60/40 | Tỷ trọng cố định tạo ra sự đánh đổi nào? |
+| **B4** | VN30/SMA200; tỷ trọng ETF mục tiêu 30% hoặc 90% | Phân bổ theo xu hướng có giảm sụt giảm không? |
+| **A3** | SMA200 và Momentum120; mục tiêu 30/60/90% | Bổ sung động lượng làm thay đổi kết quả thế nào? |
+| **S1** | SMA200 và Breadth60; mục tiêu 30/60/90% | Độ rộng thị trường có bổ sung thông tin hữu ích không? |
 
-**Ví dụ trực tiếp:** B4 dự kiến bán 37.700 CCQ, nhưng chỉ thực hiện giả định 25.600 CCQ và còn 12.100 CCQ không thực hiện. Đến 13/10/2026, danh mục còn 43,62% ETF so với mục tiêu đặt ngày 01/10 là 30%. Hai thời điểm khác nhau; khoảng cách còn chịu tác động của thị trường và những phiên tiếp theo. [Xem ứng dụng](https://vn30-etf-quant-platform.onrender.com/) → **Tổng quan** → **Kiểm tra lệnh và tài khoản B4**.
+Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần chưa được xác minh đầy đủ về khả năng quan sát đúng tại thời điểm phát sinh tín hiệu. Vì vậy, kết quả S1 được trình bày riêng như **nghiên cứu thăm dò**.
 
-**Giá trị có thể kiểm tra:** gom tín hiệu, quy tắc phân bổ, dữ liệu lệnh và trạng thái tài khoản vào một chuỗi có thể truy nguyên, thay vì chỉ đọc các bảng kết quả rời. So với bảng tính hoặc công cụ Backtest riêng lẻ, đây là *phạm vi công việc được tích hợp*, không phải bằng chứng đã tiết kiệm thời gian, giảm chi phí hay dự báo tốt hơn. Nhu cầu sử dụng định kỳ và khả năng thương mại hóa chưa được khảo sát.
+## Khi nghiên cứu trở thành một quy trình đầu tư
 
-## Cơ sở lựa chọn ETF E1VFVN30
+Ứng dụng gồm bảy mục Streamlit, phục vụ ba công việc thường gặp trong nghiên cứu chiến lược, phân tích đầu tư và theo dõi rủi ro danh mục:
 
-Mẫu nghiên cứu chỉ sử dụng **một ETF làm tài sản giao dịch** để so sánh các chính sách phân bổ trên cùng cơ sở. E1VFVN30 được chọn dựa trên thời gian hoạt động dài, tính liên tục của chuỗi giá và thanh khoản khảo sát, chứ không mặc định là ETF có lợi suất hoặc tổng chi phí tối ưu.
+| Vấn đề cần giải quyết | Cách ứng dụng hỗ trợ | Kết quả có thể kiểm tra |
+|:--|:--|:--|
+| **Lựa chọn chính sách giải ngân** | So sánh NAV, XIRR, mức sụt giảm và lọc theo ngưỡng chịu lỗ | Những phương án phù hợp mức rủi ro đã chọn trong dữ liệu lịch sử |
+| **Chuyển tín hiệu thành quyết định phân bổ** | Truy nguyên SMA200/Momentum120, tỷ trọng mục tiêu và mô phỏng một kỳ với vốn, tiền mặt, số CCQ hiện có | Nhu cầu mua/bán, chi phí, lượng thực hiện giả định và tỷ trọng sau giao dịch |
+| **Kiểm tra rủi ro khi thực hiện lệnh** | Đối chiếu tín hiệu, sổ lệnh, giới hạn 5% ADV20 và trạng thái tài khoản | Phần lệnh chưa thực hiện, tiền chờ thanh toán và mức lệch so với mục tiêu |
 
-| ETF theo dõi VN30 | Giao dịch từ | Phí quản lý (%/năm) | Trung vị khớp lệnh (tỷ đồng/phiên) |
+Điểm hữu ích của cách tiếp cận này nằm ở **mối liên hệ giữa các bước**: từ giả thuyết và tín hiệu đến giao dịch, kế toán tài sản và rủi ro còn lại. Thay vì xem những bảng tính rời nhau, người nghiên cứu có thể lần theo cùng một quyết định qua dữ liệu và sổ mô phỏng.
+
+### Một lệnh bán không thực hiện được như dự kiến
+
+Ngày **01/10/2026**, phương án B4 đặt mục tiêu đưa tỷ trọng ETF về **30%**. Sổ mô phỏng ghi nhận đề nghị bán **37.700 CCQ**, nhưng chỉ **25.600 CCQ** được thực hiện giả định theo giới hạn thanh khoản và lô giao dịch. **12.100 CCQ** còn lại không thực hiện.
+
+Đến **13/10/2026**, tỷ trọng ETF của tài khoản vẫn ở mức **43,62%**. Đây là trạng thái tại ngày 13/10, không phải tỷ trọng ngay sau lệnh ngày 01/10; biến động giá, dòng tiền và các phiên tiếp theo cũng ảnh hưởng đến khoảng cách so với mục tiêu.
+
+Một tín hiệu đúng quy tắc, vì thế, chưa đủ bảo đảm danh mục đạt tỷ trọng mong muốn. Tình huống này minh họa vì sao công cụ đầu tư cần theo dõi cả **khả năng thực hiện lệnh và trạng thái tài sản**, không chỉ điểm mua/bán.
+
+[**Xem toàn bộ tình huống và cách đối chiếu trên ứng dụng**](TINH_HUONG_SU_DUNG.md).
+
+## Kết quả nghiên cứu lịch sử
+
+| Phương án | NAV cuối kỳ (tỷ đồng) | TWR (%) | XIRR (%/năm) | MDD (%) |
+|:--|--:|--:|--:|--:|
+| B1 | 3,1266 | 40,06 | 10,06 | −42,27 |
+| B2 | 3,0709 | 34,51 | 9,55 | −42,00 |
+| B3 | 2,7588 | 26,16 | 6,53 | −26,81 |
+| B4 | 2,9013 | 35,74 | 7,94 | −20,39 |
+| A3 | 2,9856 | 41,40 | 8,75 | −18,91 |
+| S1* | 2,8603 | 34,60 | 7,54 | −17,62 |
+
+*B1–B4/A3: kết quả R01 đã đối soát. S1: sổ nghiên cứu bổ sung, chưa hoàn tất kiểm chứng dữ liệu đúng thời điểm. Số liệu theo Phụ lục A của báo cáo sáu chiến lược ngày 15/10/2026. NAV bao gồm vốn đã góp; TWR tách ảnh hưởng của dòng vốn bổ sung, XIRR phản ánh thời điểm góp vốn, còn MDD đo mức sụt giảm từ đỉnh xuống đáy.*
+
+Trong mẫu lịch sử, **B1 có NAV và XIRR cao nhất**, đồng thời chịu mức sụt giảm khoảng **42%**. B4 và A3 giảm sụt giảm so với B1, nhưng cũng duy trì tỷ trọng ETF bình quân thấp hơn. Phần chênh lệch hiệu quả cần được nhìn nhận cùng mức độ tiếp xúc thị trường, thay vì quy toàn bộ cho khả năng dự báo của tín hiệu.
+
+Các ước lượng **Alpha chưa đạt ý nghĩa thống kê ở mức 5%** theo mô hình CAPM với sai số chuẩn HAC. Đây là kết quả nghiên cứu về sự đánh đổi giữa hiệu quả và rủi ro, chưa phải bằng chứng về khả năng tạo lợi nhuận vượt trội bền vững.
+
+## Vì sao chọn E1VFVN30?
+
+Để so sánh các chính sách phân bổ trên cùng một cơ sở, nghiên cứu sử dụng **E1VFVN30 làm ETF giao dịch mô phỏng**. Quỹ có lịch sử giao dịch dài và chuỗi giá tương đối liên tục, thuận tiện cho việc theo dõi danh mục trong giai đoạn nghiên cứu. Thanh khoản cũng là một tiêu chí quan trọng vì một chiến lược chỉ có ý nghĩa thực tế khi lượng giao dịch giả định có cơ sở thực hiện.
+
+| ETF theo dõi VN30 | Bắt đầu giao dịch | Phí quản lý (%/năm) | Trung vị khớp lệnh (tỷ đồng/phiên) |
 |:--|:--:|--:|--:|
 | **E1VFVN30 – DCVFMVN30** | 06/10/2014 | 0,65 | **14,351** |
 | FUESSV30 – SSIAM VN30 | 18/08/2020 | 0,55 | 0,444 |
 | FUEMAV30 – MAFM VN30 | 08/12/2020 | 0,60 | 0,239 |
 | FUEKIV30 – KIM Growth VN30 | 07/01/2022 | 0,55 | 0,060 |
 
-*Dữ liệu theo Bảng 1 của báo cáo nghiên cứu ngày 15/10/2026. Giá trị trung vị khảo sát trên cùng 182 phiên 05/01–30/09/2026, **không phải thông tin có sẵn tại đầu mẫu năm 2021**. Đối chiếu một phiên 17/09/2021 ghi nhận giá trị khớp lệnh xấp xỉ 22,08 tỷ đồng (E1VFVN30), 2,07 tỷ đồng (FUEMAV30) và 0,70 tỷ đồng (FUESSV30); không đủ chứng minh ETF tối ưu. FUEKIV30 chưa giao dịch ở đầu mẫu.*
+*Nguồn: Bảng 1, báo cáo nghiên cứu ngày 15/10/2026; giá trị khớp lệnh trung vị trên 182 phiên từ 05/01 đến 30/09/2026. Đây là thông tin đối chiếu khi lập báo cáo, không được đưa ngược về thời điểm đầu mẫu năm 2021.*
 
-**Giới hạn chuẩn so sánh:** Theo hồ sơ quỹ được dẫn trong báo cáo, E1VFVN30 tham chiếu VN30 Total Return Index; mô hình tín hiệu và CAPM dùng VN30 Price Index. Chưa có phép thử tương đương giữa các ETF về lợi suất đầu tư thực hiện được, sai lệch bám chỉ số và toàn bộ chi phí. Đây là lý do lựa chọn *quỹ để nghiên cứu*, không phải khuyến nghị chọn quỹ tốt nhất.
+Tại phiên tham chiếu **17/09/2021**, giá trị khớp lệnh lần lượt khoảng **22,08 tỷ đồng** với E1VFVN30, **2,07 tỷ đồng** với FUEMAV30 và **0,70 tỷ đồng** với FUESSV30. FUEKIV30 chưa giao dịch vào thời điểm đó. Những quan sát này hỗ trợ việc lựa chọn tài sản nghiên cứu, nhưng chưa đủ để kết luận E1VFVN30 là phương án tốt nhất về hiệu quả đầu tư hoặc tổng chi phí.
 
-## Sáu phương án nghiên cứu
+Một khác biệt phương pháp cũng được giữ rõ: theo hồ sơ quỹ dẫn trong báo cáo, E1VFVN30 tham chiếu **VN30 Total Return Index**, trong khi tín hiệu và CAPM của nghiên cứu sử dụng **VN30 Price Index**. Việc chưa đồng nhất chuẩn so sánh là một giới hạn khi diễn giải Alpha và mức độ bám chỉ số.
 
-| Mã | Chính sách phân bổ | Vai trò |
-|:--|:--|:--|
-| **B1** | Tích lũy ETF định kỳ | Đầu tư sớm, bổ sung vốn hằng tháng |
-| **B2** | Giải ngân vốn ban đầu thành 6 đợt | Đối chứng rủi ro chọn thời điểm mua |
-| **B3** | ETF/tiền mặt mục tiêu 60/40 | Đối chứng tỷ trọng cố định |
-| **B4** | VN30 so với SMA200, mục tiêu ETF 30% hoặc 90% | Phân bổ theo xu hướng |
-| **A3** | SMA200 kết hợp Momentum120, mục tiêu 30/60/90% | Nghiên cứu bổ sung động lượng |
-| **S1** | SMA200 kết hợp Breadth60, mục tiêu 30/60/90% | Giả thuyết độ rộng thị trường đang nghiên cứu |
+## Khám phá ứng dụng
 
-**B1–B4/A3** thuộc bộ kết quả chính đã đối soát. **S1** có mô phỏng riêng nhưng giá cổ phiếu điều chỉnh chưa được xác minh đầy đủ theo thông tin có sẵn đúng ngày tín hiệu. Không gộp S1 vào nhóm kết quả đã xác nhận.
+<details>
+<summary><strong>Ba hành trình có thể tự trải nghiệm</strong></summary>
 
-## Kết quả lịch sử sau chi phí
+- **Từ mục tiêu đầu tư đến chính sách phù hợp:** tại *Tổng quan nghiên cứu*, lựa chọn ngưỡng sụt giảm, đối chiếu XIRR và NAV lịch sử giữa các phương án.
+- **Từ tín hiệu đến giao dịch:** tại *Chiến lược đầu tư* và *Tín hiệu đầu tư*, xem mốc xác nhận tín hiệu, tỷ trọng mục tiêu và mô phỏng phân bổ với điều kiện tài khoản cụ thể.
+- **Từ giao dịch đến rủi ro còn lại:** tại *Danh mục đầu tư*, *Hiệu quả và rủi ro* và *Theo dõi giao dịch mô phỏng*, đối chiếu tỷ trọng thực tế, mức sụt giảm, giới hạn lệnh và trạng thái thanh toán.
 
-| Chiến lược | NAV cuối kỳ (tỷ đồng) | TWR (%) | XIRR (%/năm) | MDD (%) |
-|:--|--:|--:|--:|--:|
-| B1 | 3,1266 | 40,06 | 10,06 | −42,27 |
-| **B2** | **3,0709** | **34,51** | **9,55** | **−42,00** |
-| B3 | 2,7588 | 26,16 | 6,53 | −26,81 |
-| B4 | 2,9013 | 35,74 | 7,94 | −20,39 |
-| A3 | 2,9856 | 41,40 | 8,75 | −18,91 |
-| S1* | 2,8603 | 34,60 | 7,54 | −17,62 |
+</details>
 
-*Nguồn: bảng kết quả R01 của năm chiến lược chính và sổ nghiên cứu S1, Phụ lục A của báo cáo sáu chiến lược ngày 15/10/2026. S1 là kết quả thăm dò, khác trạng thái xác minh dữ liệu so với R01. NAV gồm vốn đã góp và biến động tài sản; TWR loại ảnh hưởng cơ học của vốn góp, XIRR xét thời điểm góp vốn, MDD là sụt giảm đỉnh–đáy.*
-
-**Những gì số liệu thực sự cho thấy:** B1 có NAV/XIRR lớn nhất trong giai đoạn khảo sát nhưng chịu MDD khoảng 42%. B4 và A3 giảm sụt giảm danh mục so với B1 đồng thời duy trì tỷ trọng ETF bình quân thấp hơn. Alpha ước lượng của các chiến lược đều **chưa đạt ý nghĩa thống kê 5%** theo CAPM/HAC. Kết quả quá khứ chưa đủ xác nhận lợi thế dự báo hoặc mức sinh lời tương lai.
-
-## Từ tín hiệu đến một quyết định có thể kiểm tra
-
-**Tình huống B4 ngày 01/10/2026:** Tỷ trọng ETF mục tiêu là 30%. Hệ thống đề nghị bán **37.700 CCQ**, thực hiện giả định **25.600 CCQ** theo trần 5% ADV20 và ghi nhận **12.100 CCQ không thực hiện**. Đến 13/10/2026, tỷ trọng ETF thực tế vẫn là **43,62%**. Đây là ví dụ vì sao *tín hiệu đúng quy tắc chưa bảo đảm danh mục đạt tỷ trọng mong muốn*.
-
-[Xem tình huống sử dụng và cách kiểm chứng](TINH_HUONG_SU_DUNG.md).
-
-## Trải nghiệm trực tiếp trên ứng dụng
-
-1. **Chọn chính sách và mức chịu lỗ:** tại *Tổng quan*, thay đổi ngưỡng MDD, xem XIRR/NAV và lọc phương án; lựa chọn dựa trên đánh đổi lịch sử, không dự báo lợi nhuận.
-2. **Từ tín hiệu đến khối lượng lệnh:** tại *Chiến lược* và *Tín hiệu*, chọn B4/A3, kiểm tra mốc xác nhận SMA200/Momentum120, tỷ trọng mục tiêu và khối lượng thực hiện giả định; dùng *Danh mục* để xem tỷ trọng thực tế cùng tiền còn lại.
-3. **Kiểm tra rủi ro và kết quả:** tại *Hiệu quả và rủi ro*, xem Alpha và khoảng tin cậy, so sánh mức sụt giảm, thanh khoản và kịch bản sức chịu đựng; tại *Theo dõi giao dịch mô phỏng*, truy nguyên một phiên tháng 10 và nghĩa vụ thanh toán.
-
-**Quyết định sử dụng vốn thật tại thời điểm công bố: chưa chấp thuận.** Nghiên cứu còn thiếu kiểm định ngoài mẫu/tiến cứu độc lập, bằng chứng khớp lệnh thực tế và đối chứng benchmark tương đương; S1 chưa xác minh đầy đủ dữ liệu đúng thời điểm. Không dùng riêng Sharpe, MDD hoặc Alpha dương làm ngưỡng phê duyệt đầu tư.
-
-## Các màn hình ứng dụng
-
-| Tổng quan nghiên cứu | Tín hiệu đầu tư | Hiệu quả và rủi ro |
+| So sánh chính sách | Truy nguyên tín hiệu | Kiểm định và rủi ro |
 |:--:|:--:|:--:|
-| ![Tổng quan](assets/tong-quan.png) | ![Tín hiệu](assets/tin-hieu.png) | ![Rủi ro](assets/rui-ro.png) |
+| ![Giao diện tổng quan nghiên cứu](assets/tong-quan.png) | ![Giao diện tín hiệu đầu tư](assets/tin-hieu.png) | ![Giao diện hiệu quả và rủi ro](assets/rui-ro.png) |
 
-*Ảnh chụp từ phiên Streamlit ngày 15/10/2026 (09:19–09:21), trước lượt biên tập giao diện cuối. Chúng là tư liệu ghi nhận giao diện thực tế, không phải ảnh kiểm thử của bản phát hành trực tuyến.*
+*Ảnh chụp ứng dụng lúc 09:19–09:21 ngày 15/10/2026, trước lượt chỉnh sửa giao diện cuối. Giao diện trực tuyến có thể khác đôi chút.*
 
-## Phương pháp và giới hạn
+## Phương pháp và giới hạn sử dụng
 
-Tài sản giao dịch mô phỏng là **E1VFVN30** và tiền mặt; chỉ số giá **VN30** được dùng cho tín hiệu. Giả định nghiên cứu gồm phí **0,15%/chiều**, trượt giá **0,05%/chiều**, thuế bán **0,10%**, lô **100 CCQ**, giới hạn **5% ADV20** và tiền mặt không hưởng lãi. Lệnh giả định đặt từ phiên hợp lệ sau khi xác nhận tín hiệu. Những giả định này chưa phản ánh đầy đủ độ sâu sổ lệnh hoặc xác suất khớp ngoài thực tế.
+Mô hình giao dịch ETF–tiền mặt sử dụng **phí 0,15% mỗi chiều**, **trượt giá 0,05% mỗi chiều**, **thuế bán 0,10%**, **lô 100 CCQ**, **giới hạn 5% ADV20** và **lãi tiền mặt 0%**. Lệnh giả định tuân theo thời điểm xác nhận tín hiệu và quy tắc thanh toán của từng giai đoạn. Mô hình chưa phản ánh đầy đủ độ sâu sổ lệnh, cạnh tranh khớp lệnh và sai khác giữa giá mô phỏng với giá thực hiện.
 
-Chuỗi **9 phiên 01–13/10/2026** là **mô phỏng lại trên lịch sử đã quan sát**, không phải Paper Trading tiến cứu độc lập. Ứng dụng đã có địa chỉ trực tuyến; việc máy chủ khởi động thành công chưa thay thế nghiệm thu đầy đủ các hành trình người dùng. Không có bằng chứng giao dịch tiền thật hoặc Paper Trading tiến cứu độc lập được xác nhận.
+Chín phiên từ **01–13/10/2026** được **tái dựng sau khi thị trường diễn biến** để kiểm tra tài khoản và giao dịch; đây không phải Paper Trading tiến cứu độc lập. S1 vẫn cần xác minh dữ liệu đúng thời điểm, còn năm chiến lược chính chưa có bằng chứng ngoài mẫu/tiến cứu đủ mạnh để chấp thuận giao dịch vốn thật.
 
-## Mã ví dụ được phép công khai
+Ứng dụng hiện có thể truy cập trực tuyến, song khả năng vận hành máy chủ không tự chứng minh hiệu quả chiến lược hay mức độ sẵn sàng phục vụ nhà đầu tư. Giá trị sử dụng thường xuyên, mức tiết kiệm thời gian so với cách làm khác và tiềm năng thương mại hóa vẫn cần được đánh giá với người dùng thực tế.
 
-`examples/` có đoạn Python **minh họa độc lập** việc kiểm tra NAV và giới hạn khối lượng lệnh, không trích xuất bộ máy Backtest hoặc Paper Trading thực tế. Chạy từ thư mục repository:
+## Ví dụ mã nguồn
+
+Thư mục [`examples/`](examples/) giới thiệu những đoạn Python độc lập về kiểm tra NAV và giới hạn khối lượng lệnh, kèm phép thử tương ứng. Đây là các ví dụ minh họa cách xử lý một bài toán tài chính, **không phải mã nguồn của bộ máy Backtest hay Paper Trading**. Có thể chạy phép thử bằng:
 
 ```bash
 python -m unittest discover -s examples -p 'test_*.py'
 ```
 
-Kho Public được xuất bản riêng biệt, **không chứa mã nguồn sản xuất, dữ liệu nguyên gốc, tài liệu làm việc và lịch sử Git của Private**. Chưa áp dụng giấy phép mã nguồn mở. Có thể xem hoặc sao chép mã đã công khai theo khả năng kỹ thuật của GitHub; phạm vi bảo vệ thực tế đến từ việc không xuất bản những phần cốt lõi.
+Mã nguồn hệ thống, các chương trình nghiên cứu, dữ liệu gốc và sổ mô phỏng được lưu riêng để phục vụ kiểm chứng và phát triển lâu dài. Kho hồ sơ này chỉ gồm những nội dung đã chọn để giới thiệu công trình. **Chưa áp dụng giấy phép mã nguồn mở.**
