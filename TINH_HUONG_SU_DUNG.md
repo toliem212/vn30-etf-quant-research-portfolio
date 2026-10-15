@@ -33,7 +33,7 @@ Bài toán nghiên cứu bắt đầu với **1 tỷ đồng**, cùng **59 kho�
 
 Trong mẫu lịch sử, B1 có **XIRR 10,06%/năm** và **MDD −42,27%**. B4 có **XIRR 7,94%/năm**, **MDD −20,39%**; A3 có **XIRR 8,75%/năm**, **MDD −18,91%**. Mức sụt giảm thấp hơn đi cùng tỷ trọng ETF bình quân thấp hơn, nên chưa thể quy toàn bộ khác biệt cho chất lượng tín hiệu.
 
-Nghiên cứu vì vậy đặt hiệu quả đầu tư cạnh rủi ro, mức tiếp xúc thị trường, chi phí và khả năng thực hiện lệnh. Không có một chính sách phù hợp cho mọi mức chịu lỗ.
+Nghiên cứu vì vậy đặt hiệu quả đầu tư cạnh rủi ro, mức đầu tư vào thị trường, chi phí và khả năng thực hiện lệnh. Không có một chính sách phù hợp cho mọi mức chịu lỗ.
 
 ## Alpha dương đã đủ thuyết phục chưa?
 
@@ -43,8 +43,9 @@ Chưa. A3 có Alpha ước lượng **+3,4028%/năm**, với **p = 0,2393**; S1 
 
 ## Ý nghĩa của tình huống
 
-Trọng tâm của sản phẩm là nối các phần việc thường bị tách rời: **tín hiệu → tỷ trọng mục tiêu → nhu cầu giao dịch → giới hạn thực hiện → trạng thái danh mục → đánh giá rủi ro**. Nhờ có sổ mô phỏng và phương pháp đi kèm, một kết quả có thể được truy nguyên thay vì chỉ quan sát trên biểu đồ.
+Trọng tâm của sản phẩm là nối các phần việc thường bị tách rời: **tín hiệu → tỷ trọng mục tiêu → nhu cầu giao dịch → giới hạn thực hiện → trạng thái danh mục → đánh giá rủi ro**. Nhờ có sổ mô phỏng và phương pháp đi kèm, một kết quả có thể được kiểm tra từ nguồn dữ liệu đến sổ giao dịch.
 
-Các giao dịch tháng 10/2026 là **mô phỏng lại trên lịch sử đã quan sát**, không phải quyết định tiến cứu được ghi nhận trước khi thị trường diễn biến. Nghiên cứu chưa có bằng chứng ngoài mẫu độc lập đủ mạnh, chưa xác minh khớp lệnh thực tế và chưa đủ cơ sở triển khai vốn thật.
+Các giao dịch tháng 10/2026 là **mô phỏng lại các phiên giao dịch đã diễn ra**. Giao dịch thử trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết diễn biến thị trường. Nghiên cứu chưa có bằng chứng ngoài mẫu độc lập đủ mạnh, chưa xác minh khớp lệnh thực tế và chưa đủ cơ sở triển khai vốn thật.
 
 *Nguồn: Báo cáo nghiên cứu sáu chiến lược tháng 10/2026 (mục V, VII, VIII và Phụ lục A), sổ lệnh và sổ tài khoản B4 trong bộ dữ liệu nghiên cứu lưu riêng.*
+
