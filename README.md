@@ -2,7 +2,7 @@
 
 **Nghiên cứu chiến lược và mô phỏng danh mục ETF VN30**
 
-Một tín hiệu có thể cho biết khi nào nên giảm tỷ trọng cổ phiếu. Nhưng sau tín hiệu ấy, danh mục thực sự bán được bao nhiêu, còn nắm giữ bao nhiêu và đang chịu rủi ro gì?
+Một tín hiệu có thể gợi ý khi nào giảm tỷ trọng ETF. Nhưng sau tín hiệu ấy, danh mục thực sự bán được bao nhiêu, còn nắm giữ bao nhiêu và đang chịu rủi ro gì?
 
 Dự án này bắt đầu từ khoảng cách giữa **một chiến lược có kết quả Backtest** và **một quyết định đầu tư có thể thực hiện, theo dõi và kiểm chứng**. Trên cùng dữ liệu lịch sử, tôi nghiên cứu các chính sách giải ngân và phân bổ ETF VN30, sau đó nối tín hiệu với dòng tiền, số chứng chỉ quỹ, giới hạn thanh khoản, chi phí, giá trị tài sản và rủi ro danh mục.
 
@@ -77,7 +77,7 @@ Các ước lượng **Alpha chưa đạt ý nghĩa thống kê ở mức 5%** t
 | FUEMAV30 – MAFM VN30 | 08/12/2020 | 0,60 | 0,239 |
 | FUEKIV30 – KIM Growth VN30 | 07/01/2022 | 0,55 | 0,060 |
 
-*Nguồn: Bảng 1, báo cáo nghiên cứu ngày 15/10/2026; giá trị khớp lệnh trung vị trên 182 phiên từ 05/01 đến 30/09/2026. Đây là thông tin đối chiếu khi lập báo cáo, không được đưa ngược về thời điểm đầu mẫu năm 2021.*
+*Nguồn: Bảng 1, báo cáo nghiên cứu ngày 15/10/2026; giá trị khớp lệnh trung vị trên 182 phiên từ 05/01 đến 30/09/2026. Các số liệu này phục vụ đối chiếu khi lập báo cáo, không phản ánh tập thông tin sẵn có ở thời điểm đầu mẫu năm 2021.*
 
 Tại phiên tham chiếu **17/09/2021**, giá trị khớp lệnh lần lượt khoảng **22,08 tỷ đồng** với E1VFVN30, **2,07 tỷ đồng** với FUEMAV30 và **0,70 tỷ đồng** với FUESSV30. FUEKIV30 chưa giao dịch vào thời điểm đó. Những quan sát này hỗ trợ việc lựa chọn tài sản nghiên cứu, nhưng chưa đủ để kết luận E1VFVN30 là phương án tốt nhất về hiệu quả đầu tư hoặc tổng chi phí.
 
