@@ -37,7 +37,7 @@ Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần
 | **Chuyển tín hiệu thành quyết định phân bổ** | Kiểm tra SMA200/Momentum120, tỷ trọng mục tiêu và mô phỏng một kỳ với vốn, tiền mặt, số CCQ hiện có | Nhu cầu mua/bán, chi phí, lượng thực hiện giả định và tỷ trọng sau giao dịch |
 | **Kiểm tra rủi ro khi thực hiện lệnh** | Đối chiếu tín hiệu, sổ lệnh, giới hạn 5% ADV20 và trạng thái tài khoản | Phần lệnh chưa thực hiện, tiền chờ thanh toán và mức lệch so với mục tiêu |
 
-Điểm hữu ích của cách tiếp cận này nằm ở **mối liên hệ giữa các bước**: từ giả thuyết và tín hiệu đến giao dịch, hạch toán tài sản và rủi ro còn lại. Thay vì xem những bảng tính rời nhau, người nghiên cứu có thể lần theo cùng một quyết định qua dữ liệu và sổ mô phỏng.
+Điểm hữu ích của cách tiếp cận này nằm ở **mối liên hệ giữa các bước**: từ giả thuyết và tín hiệu đến giao dịch, theo dõi tiền, chứng chỉ quỹ và rủi ro danh mục. Thay vì xem những bảng tính rời nhau, người nghiên cứu có thể lần theo cùng một quyết định qua dữ liệu và sổ mô phỏng.
 
 ### Một lệnh bán không thực hiện được như dự kiến
 
