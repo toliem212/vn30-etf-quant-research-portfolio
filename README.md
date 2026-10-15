@@ -1,0 +1,67 @@
+# VN30 ETF | Nghiên cứu và mô phỏng đầu tư định lượng
+
+**Công trình nghiên cứu cá nhân** phục vụ giới thiệu năng lực nghiên cứu định lượng và phát triển sản phẩm đầu tư; không phải sản phẩm được TVS nghiệm thu hay khuyến nghị đầu tư.
+
+## Bài toán và sản phẩm
+
+Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi tháng trong 59 tháng**, nhà đầu tư nên giải ngân, duy trì ETF hay điều chỉnh tỷ trọng thế nào? Một công cụ hữu ích không chỉ đưa tín hiệu mua/bán mà còn phải theo dõi **tiền mặt, số chứng chỉ quỹ, thanh khoản, chi phí, NAV và mức sụt giảm** sau mỗi quyết định.
+
+Ứng dụng Streamlit gồm **7 mục**, hỗ trợ so sánh chính sách đầu tư, truy nguyên tín hiệu, mô phỏng một quyết định phân bổ, kiểm tra khả năng thực hiện lệnh, phân tích rủi ro và theo dõi tài khoản giả định. Giai đoạn mô phỏng chính: **01/10/2021–30/09/2026**, 1.245 phiên; tổng vốn góp **2,18 tỷ đồng**.
+
+## Sáu phương án nghiên cứu
+
+| Mã | Chính sách phân bổ | Vai trò |
+|:--|:--|:--|
+| **B1** | Tích lũy ETF định kỳ | Đầu tư sớm, bổ sung vốn hằng tháng |
+| **B2** | Giải ngân vốn ban đầu thành 6 đợt | Đối chứng rủi ro chọn thời điểm mua |
+| **B3** | ETF/tiền mặt mục tiêu 60/40 | Đối chứng tỷ trọng cố định |
+| **B4** | VN30 so với SMA200, mục tiêu ETF 30% hoặc 90% | Phân bổ theo xu hướng |
+| **A3** | SMA200 kết hợp Momentum120, mục tiêu 30/60/90% | Nghiên cứu bổ sung động lượng |
+| **S1** | SMA200 kết hợp Breadth60, mục tiêu 30/60/90% | Giả thuyết độ rộng thị trường đang nghiên cứu |
+
+**B1–B4/A3** thuộc bộ kết quả chính đã đối soát. **S1** có mô phỏng riêng nhưng giá cổ phiếu điều chỉnh chưa được xác minh đầy đủ theo thông tin có sẵn đúng ngày tín hiệu. Không gộp S1 vào nhóm kết quả đã xác nhận.
+
+## Kết quả lịch sử sau chi phí
+
+| Chiến lược | NAV cuối kỳ (tỷ đồng) | TWR (%) | XIRR (%/năm) | MDD (%) |
+|:--|--:|--:|--:|--:|
+| B1 | 3,1266 | 40,06 | 10,06 | −42,27 |
+| **B2** | **3,0709** | **34,51** | **9,55** | **−42,00** |
+| B3 | 2,7588 | 26,16 | 6,53 | −26,81 |
+| B4 | 2,9013 | 35,74 | 7,94 | −20,39 |
+| A3 | 2,9856 | 41,40 | 8,75 | −18,91 |
+| S1* | 2,8603 | 34,60 | 7,54 | −17,62 |
+
+*Nguồn: bảng kết quả R01 của năm chiến lược chính và sổ nghiên cứu S1, Phụ lục A của báo cáo sáu chiến lược ngày 15/10/2026. S1 là kết quả thăm dò, khác trạng thái xác minh dữ liệu so với R01. NAV gồm vốn đã góp và biến động tài sản; TWR loại ảnh hưởng cơ học của vốn góp, XIRR xét thời điểm góp vốn, MDD là sụt giảm đỉnh–đáy.*
+
+**Những gì số liệu thực sự cho thấy:** B1 có NAV/XIRR lớn nhất trong giai đoạn khảo sát nhưng chịu MDD khoảng 42%. B4 và A3 giảm sụt giảm danh mục so với B1 đồng thời duy trì tỷ trọng ETF bình quân thấp hơn. Alpha ước lượng của các chiến lược đều **chưa đạt ý nghĩa thống kê 5%** theo CAPM/HAC. Kết quả quá khứ chưa đủ xác nhận lợi thế dự báo hoặc mức sinh lời tương lai.
+
+## Từ tín hiệu đến một quyết định có thể kiểm tra
+
+**Tình huống B4 ngày 01/10/2026:** Tỷ trọng ETF mục tiêu là 30%. Hệ thống đề nghị bán **37.700 CCQ**, thực hiện giả định **25.600 CCQ** theo trần 5% ADV20 và ghi nhận **12.100 CCQ không thực hiện**. Đến 13/10/2026, tỷ trọng ETF thực tế vẫn là **43,62%**. Đây là ví dụ vì sao *tín hiệu đúng quy tắc chưa bảo đảm danh mục đạt tỷ trọng mong muốn*.
+
+[Xem tình huống sử dụng và cách kiểm chứng](TINH_HUONG_SU_DUNG.md).
+
+## Các màn hình ứng dụng
+
+| Tổng quan nghiên cứu | Tín hiệu đầu tư | Hiệu quả và rủi ro |
+|:--:|:--:|:--:|
+| ![Tổng quan](assets/tong-quan.png) | ![Tín hiệu](assets/tin-hieu.png) | ![Rủi ro](assets/rui-ro.png) |
+
+*Ảnh chụp từ phiên Streamlit ngày 15/10/2026 (09:19–09:21), trước lượt biên tập giao diện cuối. Chúng là tư liệu ghi nhận giao diện thực tế, không phải ảnh kiểm thử của bản phát hành trực tuyến.*
+
+## Phương pháp và giới hạn
+
+Tài sản giao dịch mô phỏng là **E1VFVN30** và tiền mặt; chỉ số giá **VN30** được dùng cho tín hiệu. Giả định nghiên cứu gồm phí **0,15%/chiều**, trượt giá **0,05%/chiều**, thuế bán **0,10%**, lô **100 CCQ**, giới hạn **5% ADV20** và tiền mặt không hưởng lãi. Lệnh giả định đặt từ phiên hợp lệ sau khi xác nhận tín hiệu. Những giả định này chưa phản ánh đầy đủ độ sâu sổ lệnh hoặc xác suất khớp ngoài thực tế.
+
+Chuỗi **9 phiên 01–13/10/2026** là **mô phỏng lại trên lịch sử đã quan sát**, không phải Paper Trading tiến cứu độc lập. Hiện chưa có bằng chứng vận hành trực tuyến hoặc giao dịch tiền thật được xác nhận trong kho này.
+
+## Mã ví dụ được phép công khai
+
+`examples/` có đoạn Python **minh họa độc lập** việc kiểm tra NAV và giới hạn khối lượng lệnh, không trích xuất bộ máy Backtest hoặc Paper Trading thực tế. Chạy từ thư mục repository:
+
+```bash
+python -m unittest discover -s examples -p 'test_*.py'
+```
+
+Kho Public được xuất bản riêng biệt, **không chứa mã nguồn sản xuất, dữ liệu nguyên gốc, tài liệu làm việc và lịch sử Git của Private**. Chưa áp dụng giấy phép mã nguồn mở. Có thể xem hoặc sao chép mã đã công khai theo khả năng kỹ thuật của GitHub; phạm vi bảo vệ thực tế đến từ việc không xuất bản những phần cốt lõi.
