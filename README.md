@@ -2,11 +2,30 @@
 
 **Công trình nghiên cứu cá nhân** phục vụ giới thiệu năng lực nghiên cứu định lượng và phát triển sản phẩm đầu tư; không phải sản phẩm được TVS nghiệm thu hay khuyến nghị đầu tư.
 
+**[Mở ứng dụng trực tuyến — VN30 ETF Quant Platform](https://vn30-etf-quant-platform.onrender.com/)** · [Tình huống sử dụng](TINH_HUONG_SU_DUNG.md) · [Ví dụ mã Python](examples/accounting_example.py)
+
+Ứng dụng dùng cho nghiên cứu và mô phỏng, không kết nối đặt lệnh tiền thật. Dịch vụ miễn phí trên Render có thể mất thời gian khởi động sau thời gian không truy cập.
+
 ## Bài toán và sản phẩm
 
 Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi tháng trong 59 tháng**, nhà đầu tư nên giải ngân, duy trì ETF hay điều chỉnh tỷ trọng thế nào? Một công cụ hữu ích không chỉ đưa tín hiệu mua/bán mà còn phải theo dõi **tiền mặt, số chứng chỉ quỹ, thanh khoản, chi phí, NAV và mức sụt giảm** sau mỗi quyết định.
 
 Ứng dụng Streamlit gồm **7 mục**, hỗ trợ so sánh chính sách đầu tư, truy nguyên tín hiệu, mô phỏng một quyết định phân bổ, kiểm tra khả năng thực hiện lệnh, phân tích rủi ro và theo dõi tài khoản giả định. Giai đoạn mô phỏng chính: **01/10/2021–30/09/2026**, 1.245 phiên; tổng vốn góp **2,18 tỷ đồng**.
+
+## Cơ sở lựa chọn ETF E1VFVN30
+
+Mẫu nghiên cứu chỉ sử dụng **một ETF làm tài sản giao dịch** để so sánh các chính sách phân bổ trên cùng cơ sở. E1VFVN30 được chọn dựa trên thời gian hoạt động dài, tính liên tục của chuỗi giá và thanh khoản khảo sát, chứ không mặc định là ETF có lợi suất hoặc tổng chi phí tối ưu.
+
+| ETF theo dõi VN30 | Giao dịch từ | Phí quản lý (%/năm) | Trung vị khớp lệnh (tỷ đồng/phiên) |
+|:--|:--:|--:|--:|
+| **E1VFVN30 – DCVFMVN30** | 06/10/2014 | 0,65 | **14,351** |
+| FUESSV30 – SSIAM VN30 | 18/08/2020 | 0,55 | 0,444 |
+| FUEMAV30 – MAFM VN30 | 08/12/2020 | 0,60 | 0,239 |
+| FUEKIV30 – KIM Growth VN30 | 07/01/2022 | 0,55 | 0,060 |
+
+*Dữ liệu theo Bảng 1 của báo cáo nghiên cứu ngày 15/10/2026. Giá trị trung vị khảo sát trên cùng 182 phiên 05/01–30/09/2026, **không phải thông tin có sẵn tại đầu mẫu năm 2021**. Đối chiếu một phiên 17/09/2021 ghi nhận giá trị khớp lệnh xấp xỉ 22,08 tỷ đồng (E1VFVN30), 2,07 tỷ đồng (FUEMAV30) và 0,70 tỷ đồng (FUESSV30); không đủ chứng minh ETF tối ưu. FUEKIV30 chưa giao dịch ở đầu mẫu.*
+
+**Giới hạn chuẩn so sánh:** Theo hồ sơ quỹ được dẫn trong báo cáo, E1VFVN30 tham chiếu VN30 Total Return Index; mô hình tín hiệu và CAPM dùng VN30 Price Index. Chưa có phép thử tương đương giữa các ETF về lợi suất đầu tư thực hiện được, sai lệch bám chỉ số và toàn bộ chi phí. Đây là lý do lựa chọn *quỹ để nghiên cứu*, không phải khuyến nghị chọn quỹ tốt nhất.
 
 ## Sáu phương án nghiên cứu
 
@@ -42,6 +61,14 @@ Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi th
 
 [Xem tình huống sử dụng và cách kiểm chứng](TINH_HUONG_SU_DUNG.md).
 
+## Trải nghiệm trực tiếp trên ứng dụng
+
+1. **Chọn chính sách và mức chịu lỗ:** tại *Tổng quan*, thay đổi ngưỡng MDD, xem XIRR/NAV và lọc phương án; lựa chọn dựa trên đánh đổi lịch sử, không dự báo lợi nhuận.
+2. **Từ tín hiệu đến khối lượng lệnh:** tại *Chiến lược* và *Tín hiệu*, chọn B4/A3, kiểm tra mốc xác nhận SMA200/Momentum120, tỷ trọng mục tiêu và khối lượng thực hiện giả định; dùng *Danh mục* để xem tỷ trọng thực tế cùng tiền còn lại.
+3. **Kiểm tra rủi ro và kết quả:** tại *Hiệu quả và rủi ro*, xem Alpha và khoảng tin cậy, so sánh mức sụt giảm, thanh khoản và kịch bản sức chịu đựng; tại *Theo dõi giao dịch mô phỏng*, truy nguyên một phiên tháng 10 và nghĩa vụ thanh toán.
+
+**Quyết định sử dụng vốn thật tại thời điểm công bố: chưa chấp thuận.** Nghiên cứu còn thiếu kiểm định ngoài mẫu/tiến cứu độc lập, bằng chứng khớp lệnh thực tế và đối chứng benchmark tương đương; S1 chưa xác minh đầy đủ dữ liệu đúng thời điểm. Không dùng riêng Sharpe, MDD hoặc Alpha dương làm ngưỡng phê duyệt đầu tư.
+
 ## Các màn hình ứng dụng
 
 | Tổng quan nghiên cứu | Tín hiệu đầu tư | Hiệu quả và rủi ro |
@@ -54,7 +81,7 @@ Với **1 tỷ đồng ban đầu**, sau đó góp **20 triệu đồng mỗi th
 
 Tài sản giao dịch mô phỏng là **E1VFVN30** và tiền mặt; chỉ số giá **VN30** được dùng cho tín hiệu. Giả định nghiên cứu gồm phí **0,15%/chiều**, trượt giá **0,05%/chiều**, thuế bán **0,10%**, lô **100 CCQ**, giới hạn **5% ADV20** và tiền mặt không hưởng lãi. Lệnh giả định đặt từ phiên hợp lệ sau khi xác nhận tín hiệu. Những giả định này chưa phản ánh đầy đủ độ sâu sổ lệnh hoặc xác suất khớp ngoài thực tế.
 
-Chuỗi **9 phiên 01–13/10/2026** là **mô phỏng lại trên lịch sử đã quan sát**, không phải Paper Trading tiến cứu độc lập. Hiện chưa có bằng chứng vận hành trực tuyến hoặc giao dịch tiền thật được xác nhận trong kho này.
+Chuỗi **9 phiên 01–13/10/2026** là **mô phỏng lại trên lịch sử đã quan sát**, không phải Paper Trading tiến cứu độc lập. Ứng dụng đã có địa chỉ trực tuyến; việc máy chủ khởi động thành công chưa thay thế nghiệm thu đầy đủ các hành trình người dùng. Không có bằng chứng giao dịch tiền thật hoặc Paper Trading tiến cứu độc lập được xác nhận.
 
 ## Mã ví dụ được phép công khai
 
