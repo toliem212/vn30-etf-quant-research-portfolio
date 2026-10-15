@@ -14,7 +14,7 @@ Dự án này bắt đầu từ khoảng cách giữa **một chiến lược c�
 
 Giả sử nhà đầu tư có **1 tỷ đồng ban đầu**, góp thêm **20 triệu đồng mỗi tháng trong 59 tháng**. Có nên đầu tư ngay toàn bộ, chia vốn thành nhiều đợt, duy trì một tỷ trọng ETF cố định hay điều chỉnh theo thị trường?
 
-Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026**, gồm **1.245 phiên giao dịch** và **2,18 tỷ đồng tổng vốn góp**. Năm chiến lược 01–05 thuộc bộ kết quả chính đã khóa; chiến lược 06 là nhánh nghiên cứu thăm dò với giới hạn dữ liệu riêng. Mã trên báo cáo và Dashboard lần lượt tương ứng với mã nguồn: **01 = B1; 02 = B2; 03 = B3; 04 = B4; 05 = A3; 06 = S1**. Các mã nguồn được giữ để truy nguyên số liệu.
+Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026**, gồm **1.245 phiên giao dịch** và **2,18 tỷ đồng tổng vốn góp**. Năm chiến lược 01–05 thuộc bộ kết quả chính đã khóa; chiến lược 06 là nhánh nghiên cứu thử nghiệm với giới hạn dữ liệu riêng. Mã trên báo cáo và Dashboard lần lượt tương ứng với mã nguồn: **01 = B1; 02 = B2; 03 = B3; 04 = B4; 05 = A3; 06 = S1**. Các mã nguồn được giữ để tra cứu nguồn số liệu.
 
 | Phương án | Cách phân bổ | Câu hỏi nghiên cứu |
 |:--|:--|:--|
@@ -25,7 +25,7 @@ Tôi xây dựng sáu phương án trên giai đoạn **01/10/2021–30/09/2026*
 | **05 · A3** | SMA200 và Momentum120; mục tiêu 30/60/90% | Bổ sung động lượng làm thay đổi kết quả thế nào? |
 | **06 · S1** | SMA200 và Breadth60; mục tiêu 30/60/90% | Độ rộng thị trường có bổ sung thông tin hữu ích không? |
 
-Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần chưa được xác minh đầy đủ về khả năng quan sát đúng tại thời điểm phát sinh tín hiệu. Vì vậy, kết quả S1 được trình bày riêng như **nghiên cứu thăm dò**.
+Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần chưa được xác minh đầy đủ về khả năng quan sát đúng tại thời điểm phát sinh tín hiệu. Vì vậy, kết quả S1 được trình bày riêng như **nghiên cứu thử nghiệm**.
 
 ## Khi nghiên cứu trở thành một quy trình đầu tư
 
@@ -34,10 +34,10 @@ Với S1, dữ liệu giá điều chỉnh của các cổ phiếu thành phần
 | Vấn đề cần giải quyết | Cách ứng dụng hỗ trợ | Kết quả có thể kiểm tra |
 |:--|:--|:--|
 | **Lựa chọn chính sách giải ngân** | So sánh NAV, XIRR, mức sụt giảm và lọc theo ngưỡng chịu lỗ | Những phương án phù hợp mức rủi ro đã chọn trong dữ liệu lịch sử |
-| **Chuyển tín hiệu thành quyết định phân bổ** | Truy nguyên SMA200/Momentum120, tỷ trọng mục tiêu và mô phỏng một kỳ với vốn, tiền mặt, số CCQ hiện có | Nhu cầu mua/bán, chi phí, lượng thực hiện giả định và tỷ trọng sau giao dịch |
+| **Chuyển tín hiệu thành quyết định phân bổ** | Kiểm tra SMA200/Momentum120, tỷ trọng mục tiêu và mô phỏng một kỳ với vốn, tiền mặt, số CCQ hiện có | Nhu cầu mua/bán, chi phí, lượng thực hiện giả định và tỷ trọng sau giao dịch |
 | **Kiểm tra rủi ro khi thực hiện lệnh** | Đối chiếu tín hiệu, sổ lệnh, giới hạn 5% ADV20 và trạng thái tài khoản | Phần lệnh chưa thực hiện, tiền chờ thanh toán và mức lệch so với mục tiêu |
 
-Điểm hữu ích của cách tiếp cận này nằm ở **mối liên hệ giữa các bước**: từ giả thuyết và tín hiệu đến giao dịch, kế toán tài sản và rủi ro còn lại. Thay vì xem những bảng tính rời nhau, người nghiên cứu có thể lần theo cùng một quyết định qua dữ liệu và sổ mô phỏng.
+Điểm hữu ích của cách tiếp cận này nằm ở **mối liên hệ giữa các bước**: từ giả thuyết và tín hiệu đến giao dịch, hạch toán tài sản và rủi ro còn lại. Thay vì xem những bảng tính rời nhau, người nghiên cứu có thể lần theo cùng một quyết định qua dữ liệu và sổ mô phỏng.
 
 ### Một lệnh bán không thực hiện được như dự kiến
 
@@ -62,11 +62,11 @@ Một tín hiệu đúng quy tắc, vì thế, chưa đủ bảo đảm danh m�
 
 *B1–B4/A3: kết quả R01 đã đối soát. S1: sổ nghiên cứu bổ sung, chưa hoàn tất kiểm chứng dữ liệu đúng thời điểm. Số liệu theo Phụ lục A của báo cáo sáu chiến lược ngày 15/10/2026. NAV bao gồm vốn đã góp; TWR tách ảnh hưởng của dòng vốn bổ sung, XIRR phản ánh thời điểm góp vốn, còn MDD đo mức sụt giảm từ đỉnh xuống đáy.*
 
-Trong mẫu lịch sử, **B1 có NAV và XIRR cao nhất**, đồng thời chịu mức sụt giảm khoảng **42%**. B4 và A3 giảm sụt giảm so với B1, nhưng cũng duy trì tỷ trọng ETF bình quân thấp hơn. Phần chênh lệch hiệu quả cần được nhìn nhận cùng mức độ tiếp xúc thị trường, thay vì quy toàn bộ cho khả năng dự báo của tín hiệu.
+Trong mẫu lịch sử, **B1 có NAV và XIRR cao nhất**, đồng thời chịu mức sụt giảm khoảng **42%**. B4 và A3 giảm sụt giảm so với B1, nhưng cũng duy trì tỷ trọng ETF bình quân thấp hơn. Phần chênh lệch hiệu quả cần được nhìn nhận cùng mức đầu tư vào thị trường, thay vì quy toàn bộ cho khả năng dự báo của tín hiệu.
 
 Các ước lượng **Alpha chưa đạt ý nghĩa thống kê ở mức 5%** theo mô hình CAPM với sai số chuẩn HAC. Đây là kết quả nghiên cứu về sự đánh đổi giữa hiệu quả và rủi ro, chưa phải bằng chứng về khả năng tạo lợi nhuận vượt trội bền vững.
 
-**Phương án tiếp tục kiểm chứng:** 05 (A3) được chọn làm ứng viên theo dõi trên dữ liệu mới, với 04 (B4) là đối chứng trực tiếp để đánh giá đóng góp của Momentum120 và 01 (B1) là mốc tích lũy dài hạn. S1 tiếp tục xác minh dữ liệu Breadth60. Đây là quyết định nghiên cứu có điều kiện; hiện chưa có bằng chứng tiến cứu đủ mạnh hoặc phê duyệt sử dụng vốn thật.
+**Phương án giao dịch thử:** 05 (A3) được chọn làm ứng viên theo dõi trên dữ liệu mới, với 04 (B4) là đối chứng trực tiếp để đánh giá đóng góp của Momentum120 và 01 (B1) là mốc tích lũy dài hạn. S1 tiếp tục xác minh dữ liệu Breadth60. Quy tắc sẽ được chốt trước khi giao dịch thử; mỗi quyết định cần được ghi nhận trước khi biết diễn biến thị trường. Hiện chưa có kết quả kiểm định trên dữ liệu mới sau khi cố định chiến lược; việc sử dụng vốn thật chưa được phê duyệt.
 
 ## Vì sao chọn E1VFVN30?
 
@@ -96,7 +96,7 @@ Một khác biệt phương pháp cũng được giữ rõ: theo hồ sơ quỹ 
 
 </details>
 
-| So sánh chính sách | Truy nguyên tín hiệu | Kiểm định và rủi ro |
+| So sánh chính sách | Kiểm tra tín hiệu | Kiểm định và rủi ro |
 |:--:|:--:|:--:|
 | ![Giao diện tổng quan nghiên cứu](assets/tong-quan.png) | ![Giao diện tín hiệu đầu tư](assets/tin-hieu.png) | ![Giao diện hiệu quả và rủi ro](assets/rui-ro.png) |
 
@@ -106,9 +106,9 @@ Một khác biệt phương pháp cũng được giữ rõ: theo hồ sơ quỹ 
 
 Mô hình giao dịch ETF–tiền mặt sử dụng **phí 0,15% mỗi chiều**, **trượt giá 0,05% mỗi chiều**, **thuế bán 0,10%**, **lô 100 CCQ**, **giới hạn 5% ADV20** và **lãi tiền mặt 0%**. Lệnh giả định tuân theo thời điểm xác nhận tín hiệu và quy tắc thanh toán của từng giai đoạn. Mô hình chưa phản ánh đầy đủ độ sâu sổ lệnh, cạnh tranh khớp lệnh và sai khác giữa giá mô phỏng với giá thực hiện.
 
-Chín phiên từ **01–13/10/2026** được **tái dựng sau khi thị trường diễn biến** để kiểm tra tài khoản và giao dịch; đây không phải Paper Trading tiến cứu độc lập. S1 vẫn cần xác minh dữ liệu đúng thời điểm, còn năm chiến lược chính chưa có bằng chứng ngoài mẫu/tiến cứu đủ mạnh để chấp thuận giao dịch vốn thật.
+Chín phiên từ **01–13/10/2026** được **mô phỏng lại các phiên giao dịch đã diễn ra** để kiểm tra tài khoản và giao dịch. Việc đánh giá trên dữ liệu mới cần chốt quy tắc và ghi nhận quyết định trước khi biết kết quả thị trường. S1 vẫn cần xác minh dữ liệu tại ngày tín hiệu; năm chiến lược chính chưa có đủ kết quả thử độc lập để chấp thuận giao dịch vốn thật.
 
-Ứng dụng hiện có thể truy cập trực tuyến, song khả năng vận hành máy chủ không tự chứng minh hiệu quả chiến lược hay mức độ sẵn sàng phục vụ nhà đầu tư. Giá trị sử dụng thường xuyên, mức tiết kiệm thời gian so với cách làm khác và tiềm năng thương mại hóa vẫn cần được đánh giá với người dùng thực tế.
+Ứng dụng hiện có thể truy cập trực tuyến, song khả năng vận hành máy chủ không tự chứng minh hiệu quả chiến lược hay mức độ sẵn sàng phục vụ nhà đầu tư. Giá trị sử dụng thường xuyên, mức tiết kiệm thời gian so với cách làm khác và tiềm năng thương mại hóa vẫn cần được đánh giá với bộ phận nghiên cứu và người quản lý danh mục.
 
 ## Ví dụ mã nguồn
 
@@ -119,4 +119,5 @@ python -m unittest discover -s examples -p 'test_*.py'
 ```
 
 Mã nguồn hệ thống, các chương trình nghiên cứu, dữ liệu gốc và sổ mô phỏng được lưu riêng để phục vụ kiểm chứng và phát triển lâu dài. Kho hồ sơ này chỉ gồm những nội dung đã chọn để giới thiệu công trình. **Chưa áp dụng giấy phép mã nguồn mở.**
+
 
