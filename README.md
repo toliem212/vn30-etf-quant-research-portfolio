@@ -8,7 +8,7 @@ Dự án này bắt đầu từ khoảng cách giữa **một chiến lược c�
 
 **[Trải nghiệm VN30 ETF Quant Platform](https://vn30-etf-quant-platform.onrender.com/)** · [Một tình huống giao dịch đáng chú ý](TINH_HUONG_SU_DUNG.md) · [Ví dụ Python](examples/accounting_example.py)
 
-Đây là công trình nghiên cứu cá nhân, không phải sản phẩm đã được TVS nghiệm thu hoặc khuyến nghị đầu tư. Ứng dụng phục vụ nghiên cứu và mô phỏng, không kết nối đặt lệnh bằng tiền thật. Máy chủ thử nghiệm có thể cần thêm thời gian khởi động sau một thời gian không hoạt động.
+Đây là dự án nghiên cứu độc lập của tác giả, phục vụ đánh giá chiến lược và phát triển công cụ đầu tư. Kết quả không phải khuyến nghị giao dịch hay sản phẩm đã được một tổ chức đầu tư phê duyệt. Ứng dụng chỉ phục vụ nghiên cứu, mô phỏng và không kết nối đặt lệnh bằng tiền thật. Máy chủ thử nghiệm có thể cần thêm thời gian khởi động sau một thời gian không hoạt động.
 
 ## Bài toán nghiên cứu
 
